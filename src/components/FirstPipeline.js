@@ -44,15 +44,19 @@ export default class FirstPipeline extends Component {
     let data = new FormData();
     // data["video"] = this.state.video;
     // data["name"] = this.state.filename;
-    data.append("video", this.state.video);
-    console.log(data);
-    sendVideo(data)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (this.state.video === null) {
+      alert("Select video to translate");
+    } else {
+      data.append("video", this.state.video);
+      console.log(data);
+      sendVideo(data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
   handleChange = (event) => {
     this.setState({
@@ -69,7 +73,6 @@ export default class FirstPipeline extends Component {
           <div className="col-2"></div>
           <div className="col-4 mt-3">
             <form onSubmit={this.handleSubmit}>
-              <input type="file" name="video" onChange={this.handleChange} />
               <Dropzone onDrop={this.handleDrop}>
                 {({ getRootProps, getInputProps }) => (
                   <div {...getRootProps({ className: "dropzone" })}>
