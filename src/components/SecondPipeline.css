@@ -1,0 +1,40 @@
+.SecondPipeline_MainDiv {
+  /* background-color: blue; */
+  /* height: 100vh; */
+}
+.SecondPipeline_inputText {
+  resize: none;
+  border-radius: 10px;
+  height: 150px;
+  width: 100%;
+}
+.SecondPipeline_text2,
+.SecondPipeline_text1 {
+  text-align: left;
+}
+
+/* Tablet */
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+  .SecondPipeline_text1 {
+    font-size: 16px;
+    text-align: left;
+  }
+  .SecondPipeline_text2 {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+/* Big tablets */
+@media (min-width: 800px) and (max-width: 1200px) {
+  .SecondPipeline_text1 {
+    font-size: 20px;
+    text-align: left;
+  }
+  .SecondPipeline_text2 {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+/* mobile */
+@media screen and (max-width: 480px) {
+}

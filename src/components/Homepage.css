@@ -6,3 +6,21 @@
   width: 80px;
   height: 40px;
 }
+
+/* Tablet */
+@media only screen and (min-width: 481px) and (max-width: 800px) {
+}
+/* Big tablets */
+@media (min-width: 800px) and (max-width: 1200px) {
+}
+/* mobile */
+@media screen and (max-width: 480px) {
+  .Homepage_title {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .Homepage_logo {
+    width: 50px;
+    height: 20px;
+  }
+}

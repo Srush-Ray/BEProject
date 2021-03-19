@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./FirstPipeline.css";
+import "./SecondPipeline.css";
 import Dropzone from "react-dropzone";
 import { MdFileUpload } from "react-icons/md";
 import { sendVideo } from "../DataServices/FirstPipeline";
-export default class FirstPipeline extends Component {
+export default class SecondPipeline extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,36 +68,25 @@ export default class FirstPipeline extends Component {
   };
   render() {
     return (
-      <div className="FirstPipeline_MainDiv">
+      <div className="SecondPipeline_MainDiv">
         <div className="row m-0 p-0">
-          <div className="col-md-1 col-lg-2"></div>
-          <div className="col-md-5 col-lg-4 mt-3">
+          <div className="col-md-2"></div>
+          <div className="col-md-4 mt-3">
+            <h3 className="SecondPipeline_text1">Enter text here:</h3>
             <form onSubmit={this.handleSubmit}>
-              <Dropzone onDrop={this.handleDrop}>
-                {({ getRootProps, getInputProps }) => (
-                  <div {...getRootProps({ className: "dropzone" })}>
-                    <input type="file" {...getInputProps()} />
-                    <p>
-                      <MdFileUpload size={40} />
-                    </p>
-                    <p className="Dropzone_text ml-md-1 ml-lg-3 ml-1">
-                      Drag 'n' drop files, or click to select files
-                    </p>
-                  </div>
-                )}
-              </Dropzone>
+              <textarea
+                name="inputText"
+                className="SecondPipeline_inputText"
+              ></textarea>
               <button type="submit" className="btn btn-dark mt-3">
-                Check
+                Convert
               </button>
             </form>
 
             <p>{this.state.filename}</p>
           </div>
           <div className="col-md-5 mt-3">
-            <h3 className="FirstPipeline_text2">
-              Converted text will be displayed here:
-            </h3>
-            <textarea disabled className="FirstPipeline_text"></textarea>
+            <h3 className="SecondPipeline_text2">Interpreted Video:</h3>
           </div>
         </div>
       </div>
